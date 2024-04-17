@@ -1,0 +1,126 @@
+1. The "public" modifiers are the less restrictive level of access control, and it also make class for fields,methods and constructors.
+example: public class plane{
+            public String takeOff:
+            public plane(String takeOff){
+                this.takeoff = takeOff;
+            }
+            public void play(){
+                System.out.println("Take off" + takeOff);
+            }
+}
+
+The class "takeOff"  its one of the public and can be call anywhere or any other classes.
+
+ The "private" modifiers have restricitve the visibility to enclose class only, this one no other class can access directly.
+ example: public class plane {
+            private String landing;
+
+          public Car(String landing) {
+                this.landing = landing;
+    }
+
+        private void pri() {
+            System.out.println("private");
+    }
+
+        public void display() {
+            pri(); 
+            System.out.println("landing" + landing);
+    }
+}
+
+The class landing and pri are private, therefore can not be access outside the plane class.
+
+The "protected" modifiers allow class members to be accessible with same package and subclass even they might in the different package and its more focus on inheritance.
+
+example: public class plane {
+            protected String landing;
+
+        protected void landing() {
+            System.out.println("landing" + landing);
+    }
+
+        class plane1 extended plane{
+            public plane(String landing){
+                this.landing =landing;
+            }
+            public void display(){
+                landing();
+            }
+        }
+    The "plane1" class which is subclass of plane therefore can be access by other.
+
+The "Static" modifiers is used to indicate that a particular member belong to itself
+
+example: public class plane{
+    public static int speed(int a, int b){
+        return a+b
+    }
+}
+    class takeoff{
+        public static void main(String[] args){
+            int sum = plane.add(1,1);
+            System.out.println('sum'+ sum);
+        }
+}
+
+add() is static method,accessible directly through the class "plane" without object instance
+
+2.Derived classes, also known as subclasses,also a superclass. They inherit fields and methods from the superclass.
+-Inheritance: Subclasses inherit public and protected members from the superclass.
+-Method Overriding: Subclasses can provide implementations for methods defined in the superclass.
+-Constructors: Subclasses do not inherit constructors but can call superclass constructors via super().
+
+Derived classes are usually used to:Extend the capabilities of existing classes without altering them.
+Implement specialized behaviors in a more specific context.
+
+3.Abstract classes in Java are used as a structure within class to give base level of function,at the same  time also enforce some condition.
+and the role of Abstract class are: provide template method, promoting reusability and enforce standard, support OOP
+and the reaasn we need it is because we need to avoid code duplicate and also control class action.
+Example: // Abstract method to compute area
+    public abstract double area();
+
+4.The final class modifier in Java serves to controlling inheritance and the modification of classes, methods, and variables.
+ usually    people use final to: Final Class,Final Method, Final Variables and the reason we need it to; secutiry, design.
+ example:final class Calculator {
+    // Declare a final method
+            public final void add(int a, int b) {
+                System.out.println("Sum: " + (a + b));
+    }
+}
+
+5.Method overloading let a method having the same name, but with different parameters.
+ to make it work we need to have: different signatures and also same method name, the reason we need it is to make thing simple and give it more flexiblity
+ example:   // Overloaded method for strings
+            public void write(String s) {
+                System.out.println("String: " + s);
+    }
+
+            // Overloaded method for doubles
+            public void write(double d) {
+                System.out.println("Double: " + d);
+    }
+
+6."while" and "do ... while" loops are both used to repeat code, but they differ in how they execute their conditions and iterations.
+A while loop checks the condition at the beginning of loop. If the condition is true, the loop's is executed. on the other a hand, 
+A do ... while loop executes the body of the loop at least once before checking the condition at the end of the loop.
+
+example: int count = 0;
+         while (count < 1) {
+            System.out.println("Count:" + count);
+                count++;  // Increment count
+}
+
+example:    int count = 0;
+            do {
+                System.out.println("Count:" + count);
+                    count++;  // Increment count
+            } while (count < 10);
+
+7. SDLC stand for: Software Development Life Cycle and it provides a guild to approach that allows people to write software that meets clints expectations,
+ and is efficient and bug-free. main stage of SDLC: requirenment analysis, design, coding,testing and deployment and maintenance.
+ The reason we need it to make sure the quility of work and controlling the budget and making sure clients satisfaction. 
+ Example: waterfall model and agile model and v-shape model and iterative model and big bang model
+
+8.This code results in an error because of the access level of the privateMethod() in the TestClass. To fix this error, we can: change the access modifier or access method internally.
+
